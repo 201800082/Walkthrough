@@ -6,19 +6,23 @@
       <title>Walkthrough</title>
       <script
          id="sap-ui-bootstrap"
-         src="/resources/sap-ui-core.js" 
+         src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
          data-sap-ui-theme="sap_belize"
          data-sap-ui-libs="sap.m"
          data-sap-ui-compatVersion="edge"
-         data-sap-ui-preload="async" >
+         data-sap-ui-preload="async"
+         data-sap-ui-resourceroots='{
+            "sap.ui.demo.walkthrough": "./"
+         }' >
       </script>
       <script>
          sap.ui.getCore().attachInit(function () {
-             alert("UI5 is ready");
+            sap.ui.xmlview({
+               viewName : "sap.ui.demo.walkthrough.view.App"
+            }).placeAt("content");
          });
-      </script>      
+      </script>
    </head>
-   <body>
-      <p>Hello World</p>
+   <body class="sapUiBody" id="content">
    </body>
 </html>
